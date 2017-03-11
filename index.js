@@ -1,4 +1,7 @@
 'use strict';
+var AWS = require('aws-sdk');
+AWS.config.region = 'eu-west-1';
+var lambda = new AWS.Lambda();
 var request = require ( 'request' )
 
 console.log('Loading function');
