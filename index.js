@@ -24,6 +24,7 @@ function checkStatus(url, done) {
   var options = {
     uri: url,
     method: "HEAD",
+    "timeout": "60000",
     headers: {
       "Accept": "application/json",
       "Content-Type": "application/json",
