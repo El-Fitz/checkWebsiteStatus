@@ -32,9 +32,13 @@ function checkStatus(url, done) {
     }
   };
   request(options, function(err, data) {
-    console.log("Headers: ", data.headers);
-    console.log("Status Code: ", data.statusCode);
-    console.log("Error: ", err);
-    done(err, data.headers, data.statusCode);
+    if (typeof data != 'undefined') {
+      console.log("Headers: ", data.headers);
+      console.log("Status Code: ", data.statusCode);
+      console.log("Error: ", err);
+      done(err, data.headers, data.statusCode);
+    } else {
+      done(err, null);
+    }
   });
 }
